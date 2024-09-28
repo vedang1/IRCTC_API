@@ -14,7 +14,6 @@ The IRCTC API is a railway management system designed to allow users to check tr
 - **Backend**: Node.js, Express.js
 - **Database**: PostgreSQL
 - **Authentication**: JSON Web Tokens (JWT)
-- **ORM**: (Optional) pg-promise or Sequelize for database interactions
 - **Environment Variables**: dotenv for managing sensitive configuration
 
 ## Installation
