@@ -1,11 +1,11 @@
-// models/trainModel.js
+
 const pool = require('../db.js');
 
 // Add a new train
 exports.addTrain = async (name, source, destination, totalSeats) => {
   const query = `
     INSERT INTO trains (name, source, destination, total_seats, available_seats)
-    VALUES ($1, $2, $3, $4, $4)
+    VALUES (Rs1, Rs2, Rs3, Rs4, Rs4)
     RETURNING *;
   `;
   const values = [name, source, destination, totalSeats];
@@ -22,7 +22,7 @@ exports.addTrain = async (name, source, destination, totalSeats) => {
 exports.getTrainsByRoute = async (source, destination) => {
   const query = `
     SELECT * FROM trains
-    WHERE source = $1 AND destination = $2;
+    WHERE source = Rs1 AND destination = Rs2;
   `;
   const values = [source, destination];
 
@@ -36,7 +36,7 @@ exports.getTrainsByRoute = async (source, destination) => {
 
 // Find train by ID
 exports.findTrainById = async (id) => {
-  const query = 'SELECT * FROM trains WHERE id = $1;';
+  const query = 'SELECT * FROM trains WHERE id = Rs1;';
   const values = [id];
 
   try {
