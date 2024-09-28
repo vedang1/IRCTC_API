@@ -9,7 +9,7 @@ exports.register = async (req, res) => {
 
   try {
     const result = await pool.query(
-      'INSERT INTO users (email, password, role) VALUES ($1, $2, $3) RETURNING *',
+      'INSERT INTO users (email, password, role) VALUES (Rs1, Rs2, Rs3) RETURNING *',
       [email, hashedPassword, role]
     );
     res.status(201).json({ user: result.rows[0] });
@@ -23,7 +23,7 @@ exports.login = async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const userResult = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
+    const userResult = await pool.query('SELECT * FROM users WHERE email = Rs1', [email]);
     const user = userResult.rows[0];
 
     if (!user || !(await bcrypt.compare(password, user.password))) {
