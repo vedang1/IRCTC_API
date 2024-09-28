@@ -1,11 +1,11 @@
-// models/userModel.js
+
 const pool = require('../db.js');
 
 // Create a new user
 exports.createUser = async (email, hashedPassword, role) => {
   const query = `
     INSERT INTO users (email, password, role)
-    VALUES ($1, $2, $3)
+    VALUES (Rs1, Rs2, Rs3)
     RETURNING id, username, role;
   `;
   const values = [email, hashedPassword, role];
@@ -20,7 +20,7 @@ exports.createUser = async (email, hashedPassword, role) => {
 
 // Find user by username
 exports.findUserByUsername = async (email) => {
-  const query = 'SELECT * FROM users WHERE username = $1;';
+  const query = 'SELECT * FROM users WHERE username = Rs1;';
   const values = [email];
 
   try {
@@ -33,7 +33,7 @@ exports.findUserByUsername = async (email) => {
 
 // Find user by ID
 exports.findUserById = async (id) => {
-  const query = 'SELECT * FROM users WHERE id = $1;';
+  const query = 'SELECT * FROM users WHERE id = Rs1;';
   const values = [id];
 
   try {
