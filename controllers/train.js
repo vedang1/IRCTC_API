@@ -6,7 +6,7 @@ exports.addTrain = async (req, res) => {
 
   try {
     const result = await pool.query(
-      'INSERT INTO trains (name, source, destination, total_seats, available_seats) VALUES ($1, $2, $3, $4, $4) RETURNING *',
+      'INSERT INTO trains (name, source, destination, total_seats, available_seats) VALUES (Rs1, Rs2, Rs3, Rs4, Rs4) RETURNING *',
       [name, source, destination, total_seats]
     );
     res.status(201).json({ train: result.rows[0] });
@@ -21,7 +21,7 @@ exports.getSeatAvailability = async (req, res) => {
 
   try {
     const result = await pool.query(
-      'SELECT * FROM trains WHERE source = $1 AND destination = $2',
+      'SELECT * FROM trains WHERE source = Rs1 AND destination = Rs2',
       [source, destination]
     );
     res.json({ trains: result.rows });
