@@ -1,11 +1,11 @@
-// models/bookingModel.js
+
 const pool = require('../db.js');
 
 // Create a new booking
 exports.createBooking = async (userId, trainId, seatsBooked) => {
   const query = `
     INSERT INTO bookings (user_id, train_id, seats_booked)
-    VALUES ($1, $2, $3)
+    VALUES (Rs1, Rs2, Rs3)
     RETURNING *;
   `;
   const values = [userId, trainId, seatsBooked];
@@ -20,7 +20,7 @@ exports.createBooking = async (userId, trainId, seatsBooked) => {
 
 // Get booking by ID
 exports.findBookingById = async (id) => {
-  const query = 'SELECT * FROM bookings WHERE id = $1;';
+  const query = 'SELECT * FROM bookings WHERE id = Rs1;';
   const values = [id];
 
   try {
