@@ -1,9 +1,9 @@
-// db.js
+
 const { Pool } = require('pg');
 require('dotenv').config();
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL, // Adjust this for your local database or use individual config keys
+  connectionString: process.env.DATABASE_URL, 
 });
 
 pool.connect((err) => {
